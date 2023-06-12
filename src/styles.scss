@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%;}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.cdk-overlay-pane {
+    height: 98vh;
+    width: 567px;
+}
+.mdc-dialog__actions{
+    flex-wrap: nowrap !important;
+}
+object > img{
+    width: 100%;
+    height: auto;
+}
+.mat-mdc-snack-bar-container {
+    position: absolute !important;
+}
+@media screen and (max-width: 480px) {
+    .cdk-overlay-pane {
+        
+        max-width: 97vw !important;
+    }
+  }

@@ -1,0 +1,45 @@
+<ngx-ui-loader></ngx-ui-loader>
+<div class="main-wrapper" *ngIf="show">
+        <div class="card1">
+        <div class="intro">
+            <span class="profile-img">
+
+                <img [src]="profile" alt="dfdf">
+            </span>
+            <h3>Sumit Kumar</h3>
+            <h3>Bihar</h3>
+        </div>
+        <button class="btn" mat-raised-button color="primary"  (click)="openDialogWithoutRef('gs://myfirstapp-ef5d5.appspot.com/sumitcv_sde1_page-0001.jpg')">Click to see my resume</button>
+    </div>
+    <div class="card2">
+        <h2>My Certificate</h2>
+        <ul>
+            <li (click)="openDialogWithoutRef('gs://myfirstapp-ef5d5.appspot.com/certificate1.jpeg')"><u>Dummy Certificate 1</u></li>
+            <li (click)="openDialogWithoutRef('gs://myfirstapp-ef5d5.appspot.com/certificate2.jpeg')"><u>Dummy Certificate 2</u></li>
+        </ul>
+    </div>
+    <div class="card2">
+        <h2>Share your thought on my profile</h2>
+        <div class="textarea">
+            <textarea #inputField class="textarea-full-width" rows="7"  placeholder="your resume can be inprove in this way...."></textarea>
+            <button class="btn" mat-raised-button color="primary" (click)="onSubmit(inputField.value)">Submit</button>
+        </div>
+    </div>
+    <button mat-flat-button class="call">
+        <h3><a href="tel:+919661778393">Contact me</a></h3>
+        <mat-icon> call</mat-icon>
+    </button>
+</div>
+<ng-template #secondDialog >
+    <mat-icon class="inline-icon" mat-dialog-close>close</mat-icon>
+    <br>
+  <mat-dialog-content class="view-file">
+    <!-- <embed [src]="imgUrl" type="application/pdf" width="100%" height="100%" /> -->
+    <img [src]="imgUrl">
+  </mat-dialog-content>
+  <mat-dialog-actions class="dialog-actions">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" (click)="downloadFile(imgUrl)">Download</button>
+  </mat-dialog-actions>
+</ng-template>
+<router-outlet></router-outlet>
